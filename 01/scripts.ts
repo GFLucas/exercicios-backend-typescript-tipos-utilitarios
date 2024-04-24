@@ -4,8 +4,11 @@ type Usuario = {
     cpf: string,
     rg: string
     dataNacimento?: string
-}
+};
 
-const cadastrarUsuário = (info: Usuario): Usuario => {
+type UsuarioSemRg = Omit<Usuario, 'rg'>;
+type UsuarioCamposObrigatorios = Required<UsuarioSemRg>;
+
+const cadastrarUsuário = (info: Usuario): UsuarioSemRg => {
     return info;
-}
+};
